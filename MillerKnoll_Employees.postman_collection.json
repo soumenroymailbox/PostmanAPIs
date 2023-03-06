@@ -1,0 +1,1354 @@
+{
+	"info": {
+		"_postman_id": "9dfd28de-3253-4288-abd9-8e43f2cd2713",
+		"name": "MillerKnoll_Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11599611"
+	},
+	"item": [
+		{
+			"name": "EmployeeDetails",
+			"item": [
+				{
+					"name": "PostEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empName\": \"Ganesh A \",\r\n  \"empDesignation\": \"Fullstack Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostEmployeeWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0ODk5NjYsImlhdCI6MTY3NjQ3MTk2Nn0.UqGodaH7r-0NzNQKrpquyz9Od8fXlHP68UQb0XTwHvAXWs6T2oVVI5I6-pPN8OIUQRCBw5bpJNN-yEuKhKLYqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empName\": \"Ganesh S\",\r\n  \"empDesignation\": \"Fullstack Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchEmployee",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empName\": \"Syed Waseem\",\r\n  \"empDesignation\": \"Java/JPA Developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/employee/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchEmployeeWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empName\": \"Virat Kohli\",\r\n  \"empDesignation\": \"Java/JPA Developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/employee/update/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee",
+								"update",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEmployee",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employee?pageNumber=0&pageSize=50&sortBy=empId&sortOrder=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "50"
+								},
+								{
+									"key": "sortBy",
+									"value": "empId"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEmployeeWithPages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employee?pageNumber=0&pageSize=5&sortBy=empId&sortOrder=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "empId"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EmployeeSearch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employee-search/soumen",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee-search",
+								"soumen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleEmployee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employee/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee",
+								"6"
+							],
+							"query": [
+								{
+									"key": "empName",
+									"value": "soumen",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEmployee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empName\": \"Ganesh Aroor\",\r\n  \"empDesignation\": \"BT Developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/employee/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEmployeeWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employee/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PersonalDetails",
+			"item": [
+				{
+					"name": "PostPersonal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aadhaarNo\": 6253356737,\r\n    \"contactNo\" : 546464646,\r\n    \"contactEmail\" : \"qa1@email.com\",\r\n    \"city\" : \"Bangalore\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/personal/add-personal/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"personal",
+								"add-personal",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostPersonalWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aadhaarNo\": 6253356737,\r\n    \"contactNo\" : 546464646,\r\n    \"contactEmail\" : \"qa1@email.com\",\r\n    \"city\" : \"Bangalore\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/personal/add-personal/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"personal",
+								"add-personal",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePersonal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aadhaarNo\": 333323233,\r\n    \"contactNo\" : 33333333,\r\n    \"contactEmail\" : \"V@amail.com\",\r\n    \"city\" : \"kolkata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/personal/update-personal/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"personal",
+								"update-personal",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePersonalWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aadhaarNo\": 333323233,\r\n    \"contactNo\" : 33333333,\r\n    \"contactEmail\" : \"V@amail.com\",\r\n    \"city\" : \"kolkata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/personal/update-personal/43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"personal",
+								"update-personal",
+								"43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllEmployeesPersonal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/personal/find-personal?pageNumber=0&pageSize=50&sortBy=pId&sortOrder=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"personal",
+								"find-personal"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "50"
+								},
+								{
+									"key": "sortBy",
+									"value": "pId"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEmployeePersonal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/personal/find-personal/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"personal",
+								"find-personal",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SkillDetails",
+			"item": [
+				{
+					"name": "PostSkill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n        \"skillName\" : \"Programming Using Manual Testing\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/skill/add-skill/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"skill",
+								"add-skill",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostSkillWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n        \"skillName\" : \"Programming Using API Testing v2\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/skill/add-skill/45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"skill",
+								"add-skill",
+								"45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleSkill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/skill/find-skill/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"skill",
+								"find-skill",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSkill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n        \"skillName\" : \"Updated Programming Using R+\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/skill/update-skill/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"skill",
+								"update-skill",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSkillWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n        \"skillName\" : \"Updated Programming Using R+\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/skill/update-skill/45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"skill",
+								"update-skill",
+								"45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSkill",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/skill/delete-skill/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"skill",
+								"delete-skill",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProjectDetails",
+			"item": [
+				{
+					"name": "PostProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"projectName\": \"OM v3\",\r\n  \"projectCategory\": \"PT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/projectToEmployee/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projectToEmployee",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostProjectWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"projectName\": \"OM v3\",\r\n  \"projectCategory\": \"PT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/projectToEmployee/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projectToEmployee",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchProject",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"projectName\": \"Harbour New\",\r\n  \"projectCategory\": \"Business Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/projects/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projects",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchProjectWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"projectName\": \"Harbour New\",\r\n  \"projectCategory\": \"Business Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/projects/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projects",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProjectFromEmployee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employees/1/projects/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employees",
+								"1",
+								"projects",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProjectFromEmployeeWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/employees/15/projects/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employees",
+								"15",
+								"projects",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProject(MustBe Not Linked with any Employee)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/projects/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projects",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProject(MustBe Not Linked with any Employee) WithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/projects/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"projects",
+								"28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "PostRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\": \"Admin\",\r\n    \"username\" : \"syedarif\",\r\n    \"password\" : \"sr@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/role/add-role/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"role",
+								"add-role",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostRoleWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\": \"Admin\",\r\n    \"username\" : \"Sushma N\",\r\n    \"password\" : \"sn@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/role/add-role/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"role",
+								"add-role",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchRole",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\": \"SuperAdmin\",\r\n    \"username\" : \"arif\",\r\n    \"password\" : \"31@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/role/update-role/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"role",
+								"update-role",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchRoleWithToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY0NTQwMTEsImlhdCI6MTY3NjQzNjAxMX0.t23FyqgtITKt0pTnCVs1z4ZT-iO7nx9S3ZuobL8yx7I5MBmkgRUpNm2c9GSiqzAPJsmJsvpL2Cu6ptyS3WXZdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\": \"SuperAdmin\",\r\n    \"username\" : \"Mayank\",\r\n    \"password\" : \"91@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/role/update-role/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"role",
+								"update-role",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/role/find-role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"role",
+								"find-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/role/find-role/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"role",
+								"find-role",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "E2E_DataEntry",
+			"item": [
+				{
+					"name": "PostAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empName\": \"ki Roy\",\r\n    \"empDesignation\": \"Sr. SDET QA Test Engineer\",\r\n    \"skills\": \r\n    [\r\n        {\r\n            \"skillName\": \"Programming Using Java\"\r\n        },\r\n        {\r\n            \"skillName\": \"Database Using MySql\"\r\n        }\r\n    ],\r\n    \"personal\": \r\n    {\r\n        \"aadhaarNo\": 9933428715,\r\n        \"contactNo\": 9333428715,\r\n        \"contactEmail\": \"soroy@email.com\",\r\n        \"city\": \"Asansol\"\r\n    },\r\n\t\"projectSet\": [\r\n        {\r\n            \"projectName\": \"Harbour\",\r\n            \"projectCategory\": \"Backend Web Application\"\r\n        },\r\n\t\t{\r\n            \"projectName\": \"Order Manager\",\r\n            \"projectCategory\": \"Ordering System\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SwaggerDocumentations",
+			"item": [
+				{
+					"name": "Swagger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v3/api-docs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v3",
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "GetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"soumenroy\",\r\n    \"password\" : \"sr@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/auth/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Certification",
+			"item": [
+				{
+					"name": "Certification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb3VtZW5yb3kiLCJleHAiOjE2NzY2NDIxMDYsImlhdCI6MTY3NjYyNDEwNn0.FSZu16IkzRky21lW5dWBupt8b2-sIoQgEUV_dO3I_bhPQn4Q4UfeRyeR3zTb9LA9MfjO39IHcI5z4ruZMenjhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/certification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"certification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestRequest",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
